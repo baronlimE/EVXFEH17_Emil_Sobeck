@@ -1,0 +1,103 @@
+ 
+  /* universal selectors */
+  *{
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box; /* Tar i beräkning storleken på både innehållet och padding från innehållet till en eventuell ram och tjockleken på ramen*/
+    margin:0; /*marginalen sätts till 0 */
+    padding:0; /*padding sätts till 0 */
+    }
+  
+  /* type selectors */
+  body{
+          background-color: #e9967a;
+          width:100%;
+          max-width:50em; /*50em är lika 800px*/
+          margin:0 auto; /*för att centrera innehållet i body proportionellt*/
+    }
+
+    ul{
+        list-style-type:none; /*tar bort punkterna från alla ul*/
+    }
+    
+    a:link {
+            text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+
+    nav a:hover {  /*ändrar länk färgen till #555 när man 
+                hoovrar över länktexten i nav*/
+            color:#555; 
+    }
+
+    nav{ /*sätter bakgrundsfärg i nav */
+         background:#333;
+    }
+
+    nav a{  /*gör den länkade texten i listor under nav till vit*/
+        color:white;
+    }
+
+    nav li{ /*visar alla li under nav i följd efter varandra med padding på 1.5em */
+        
+        display: inline;
+        margin: 3em;
+    }
+
+    .logo h2+h3{  /*Adjacent sibling collector. Riktar in sig på en <h3> som är direkt efter en <h2> och de båda är syskon 
+        och har samma förälder, i detta fall div klassen .logo 
+        Inga andra taggar berörs, även om de är i .logo eller utanför .logo4
+        I detta fall funkar styling även utan ange .logo då h2 och h3 bara ligger i följd
+        på ett ställe i websidan. Textfärgen sätts till greenyellow */
+        color:greenyellow;
+    }
+    
+    article{ /*sätter bakgrundsfärg för article till slategray och margin till 1em*/
+            background-color:slategray; 
+            margin: 1em;
+    }
+    
+    article p { /*för paragraf text som ÄVEN är länkar i article ställs färg, padding, margin-bottom in*/
+        color:whitesmoke;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .syndicate h3 { /* för alla h3 i klassen .syndicate ställs padding in och text centreras*/
+        text-align:center;
+        padding:0.5em;
+        color: #231CBF;
+    }
+
+.blog_summary li {  /*styr enbart på li i en ul inom klassen blog_summary, och inte andra eventuella li inom html filen.
+                    Denna regel kommer inte påverka några andra <li> element på sidan
+                    Descencant selector*/
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.blog_summary>span{ /*child selector - all text taggad som <span> som befinner sig i en klass som heter blog_summary blir gulfärgad */
+    color:yellow;
+}
+
+.blog_summary a:hover {/*pseudo class selector*/
+      color:red; /*ändrar länk färgen till röd när man hoovrar över den*/
+}
+
+.blog_summary{  /*centrerar allt i klassen blog_summary */
+    text-align: center;
+    background-color: #E38D8D;
+} 
+
+.contact{ /*centrerar och ställer in margin-top för klassen .contact */
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.tel ~ .web{ /*General Sibling Combinator.
+                de två sekvenserna .tel och .web delar föräldern .contact 
+                Elementet som representeras av .tel föregår elementet som 
+                representeras av .web vars text sätts till vit*/
+    color:white;
+}
+.web a{ /*gör alla länkar i .web till vita*/
+    color: white;
+}
