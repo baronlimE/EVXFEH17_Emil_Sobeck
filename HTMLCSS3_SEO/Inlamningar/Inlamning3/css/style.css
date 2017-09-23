@@ -1,0 +1,309 @@
+ 
+  /* universal selectors */
+  *{
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box; /* Tar i beräkning storleken på både innehållet och padding från innehållet till en eventuell ram och tjockleken på ramen*/
+    margin:0; /*marginalen sätts till 0 */
+    padding:0; /*padding sätts till 0 */
+    }
+  
+  /* type selectors */
+  body{
+          background-color: #e9967a;
+          width:100%;
+          max-width:766px; /*sätter bredden på Body*/
+          margin:0 auto; /*för att centrera innehållet i body proportionellt*/
+    }
+
+/*Visas enbart på mobilen*/
+label{
+    color:red;
+    line-height: 40px;
+    font-size:2em;
+    cursor:pointer;
+  }
+  
+    a:link {
+    text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+
+  /*Dold chekcbox som aldrig visas*/
+  #nav-toggle {
+    display: none;
+  }
+  
+  /*Men som används för att dölja och visa menyn på mobilen*/
+  #nav-toggle:checked + #wrapper nav {
+    display: block;
+  }
+  
+  /*Menyn döljs på mobilen som default*/
+  nav {
+    display: none;	
+      text-transform: uppercase;
+  }
+  
+  nav a{
+      display:block;
+      text-decoration: none;
+      font-family: merriweather;
+      font-weight: bold;
+      font-size:10pt;
+      color:#112233;
+  }
+  
+  nav a:hover{
+      background:#223433;
+      color:#f0f1f5;
+  }
+  
+  nav ul{
+    list-style: none;
+    opacity:0.8;
+  }
+  
+  nav ul li{
+    background:skyblue;
+    line-height: 40px;
+    padding-left: 4px;
+  }
+  
+  /*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+  nav ul li ul li a{
+    color:yellow;
+  }
+  
+  /*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+  nav ul ul li ul a{
+    color:white;
+  }
+  
+  nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+    position:relative; /* sätter positionen till vara relativt till sin behållare*/
+    display:none;
+}
+
+/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+nav ul ul ul{
+    display:none;
+}
+
+/*Visar dropdown vid hover på ul li Killroy 1-4*/
+nav ul li:hover ul li{
+    display: block; 
+}
+
+/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
+har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Killroy 1 */
+nav ul ul li:hover ul{
+    display:block;
+    position: relative; /*sätter positionen till att relative mot sin förälder 
+                        som är satt till att vara relative. Eg kan hela raden tas bort, får
+                            samma effekt! */
+    width:100px; /*samma som ul li*/
+    left:83px; /*absolute position i px ifrån sin förälder*/
+    top:0px; /*absolute position högst mot sin förälder*/ 
+}
+
+article{ /*sätter bakgrundsfärg för article till slategray och margin till 1em*/
+    background-color:slategray; 
+    margin: 1em;
+}
+
+article p { /*för paragraf text som ÄVEN är länkar i article ställs färg, padding, margin-bottom in*/
+color:whitesmoke;
+padding: 0.5em;
+margin-bottom: 0.5em;
+}
+
+.syndicate h3 { /* för alla h3 i klassen .syndicate ställs padding in och text centreras*/
+text-align:center;
+padding:0.5em;
+color: #231CBF;
+}
+
+.blog_summary li {  /*styr enbart på li i en ul inom klassen blog_summary, och inte andra eventuella li inom html filen.
+            Denna regel kommer inte påverka några andra <li> element på sidan
+            Descencant selector*/
+margin: 0.5em;
+padding: 0.5em;
+}
+
+.blog_summary>span{ /*child selector - all text taggad som <span> som befinner sig i en klass som heter blog_summary blir gulfärgad */
+color:yellow;
+}
+
+.blog_summary a:hover {/*pseudo class selector*/
+color:red; /*ändrar länk färgen till röd när man hoovrar över den*/
+}
+
+.blog_summary{  /*centrerar allt i klassen blog_summary */
+text-align: center;
+background-color: #E38D8D;
+} 
+
+.contact{ /*centrerar och ställer in margin-top för klassen .contact */
+text-align: center;
+margin-top: 0.5em;
+}
+
+.tel ~ .web{ /*General Sibling Combinator.
+        de två sekvenserna .tel och .web delar föräldern .contact 
+        Elementet som representeras av .tel föregår elementet som 
+        representeras av .web vars text sätts till vit*/
+color:white;
+}
+
+.web a{ /*gör alla länkar i .web till vita*/
+color: white;
+}
+
+.blog_summary li:nth-of-type(3n+2) a{ /*färgar om var 3e li (länkad text) med start på 2a i .blog_summary*/
+color: black;
+}
+
+section article:nth-child(3n+2){ /*Var 3e article med start på nr2 får bakgrunden slateblue
+                        parent=section, man kan även använda klassens namn .syndicate*/
+background-color:slateblue;
+}  
+
+div #pushup{
+    
+}
+
+
+  @media all and (min-width: 630px){
+  /*Tecknet för mobil menyn döljs på desktop*/
+    label{
+      display:none;
+    }
+
+
+
+
+/*Nedan stylas Menyn på desktoppen*/
+
+    ul{
+        list-style-type:none; /*tar bort punkterna från alla ul*/
+    }
+    
+    a:link {
+        text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+
+  
+
+    nav a{  /*gör den länkade texten i listor under nav till vit*/
+        color:white;
+    }
+
+
+
+/*Nedan Stylas Dropdown menyerna (i desktop) */
+nav {
+	height:40px;
+    width:736px;/*beror på vilken bredd man satt på de enskilda li, 
+                i detta fall är de 4 li*200px+margin-right på 1px*/ 
+	display:block;
+	margin:0 auto; /*centrar ul inuiti*/
+	text-align: center;
+	text-transform: uppercase;
+}
+nav a{
+	display:block;
+	text-decoration: none;
+	font-family: merriweather;
+	font-weight: bold;
+	font-size:10pt;
+	color:#112233;
+}
+
+nav a:hover{
+	background:#223433;
+    color:#f0f1f5;
+}
+
+nav ul{ /*stylar dropdown mm första ul i flödet, Meny 1,2,3,4,5*/
+	list-style: none;
+    opacity:0.8;
+}
+
+nav ul ul{ /*stylar dropdown o deras submenyers text till vänster */
+    text-align: left;
+}
+
+nav ul li{/* Påverkar *Meny1, Meny2--Meny5*/
+	float:left;/*gör att den flyter till vänster */
+	width:183px;
+	height:40px;
+	line-height: 40px;
+	background:skyblue;
+    margin-right:1px;
+    padding-left: 0px;
+}
+
+nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+	position:relative; /* sätter positionen till vara relativt till sin behållare*/
+    display:none;
+    padding-left: 16px; /* Skjute texten till vänster, dropdown o dess submenyer */
+
+}
+
+/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+nav ul ul ul{
+	display:none;
+}
+
+/*Visar dropdown vid hover på ul li Killroy 1-4*/
+nav ul li:hover ul li{
+	display: block; 
+}
+
+/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
+har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Meny1*/
+nav ul ul li:hover ul{
+	display:block;
+	position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+	width:183px; /*samma som ul li*/
+	left:183px; /*absolute position 140px ifrån sin förälder*/
+	top:0px; /*absolute position högst mot sin förälder*/ 
+}
+
+nav ul li ul li a{ /*stylar länkad menytext i dropdown till rött*/
+    color: red;
+}
+
+nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centrerar texten */
+    padding-left:0px;
+    text-align: center;
+}
+
+nav ul ul li:nth-last-child(1){ /*rundar nedre hörn på sista menyElementet i 
+                dropdown och subdropdown, för menyTEXT */
+border-radius: 0px 0px 16px 16px; 
+}
+
+nav ul ul li:nth-last-child(1) a{ /*rundar nedre hörn på sista menyElementet i 
+    dropdown och subdropdown, för LÄNKAD menyTEXT */
+border-radius: 0px 0px 16px 16px;
+}
+
+nav ul ul span{
+    background-color: white;
+    color: magenta;
+    text-shadow: 3px 3px 6px blue;
+    padding: 2px 4px;
+    width: auto;
+    font-size: 12px;
+    border: none;
+    border-radius: 8px;
+}
+
+}
+
+
+  /*
+position: absolute;
+display: ;
+right: 5px;
+*/
