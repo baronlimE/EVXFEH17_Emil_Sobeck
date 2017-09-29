@@ -1,0 +1,370 @@
+ 
+*{
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box; /* Tar i beräkning storleken på både innehållet och padding från innehållet till en eventuell ram och tjockleken på ramen*/
+    margin:0; /*marginalen sätts till 0 */
+    padding:0; /*padding sätts till 0 */
+}
+  
+/* type selectors */
+body{	width:100%;
+		margin:0 auto; /*för att centrera innehållet i body proportionellt*/
+}
+#footer_end{ text-align: center; /* stylar copyright footern längst ned */
+				margin-top: 6px;	
+} 
+
+.top {	display:flex;
+		align-items: baseline;
+		justify-content: flex-end;	
+}
+
+.logo{	padding-right: 1em;
+		font-size: 1.5em;
+}
+
+.text{	display: flex;
+		padding-right: 1em;
+		align-items: baseline;
+}
+
+.dd1{ background-color: seagreen; order: 2; }
+.dd2{ background-color: blue; order: 3; }
+.dd3{ background-color: purple; order: 4; }
+.dd4{ background-color: darkblue; order: 5; }
+.dd5{ background-color: orange; order: 6; }
+.dd6{background-color: orangered; order: 1; }
+
+.fa{ padding: 4px;}
+
+a:link {
+	text-decoration: none; /*tar bort underline i alla länkar*/
+}
+
+#nav-toggle {  /*Dold chekcbox som aldrig visas*/
+	display: none;
+}
+  
+/*Men som används för att dölja och visa menyn på mobilen*/
+#nav-toggle:checked + #wrapper nav {
+	display: block;
+}
+  
+
+/*Menyn döljs på mobilen som default*/
+nav {
+	display: flex;
+	justify-content: center;
+	display: none;	
+	text-transform: uppercase;
+}
+ 
+.list{ 	display:flex;
+		flex-direction: column;
+		text-align: center;
+}
+
+nav a{
+	display:block;
+	text-decoration: none;
+	font-family: merriweather;
+	font-weight: bold;
+	font-size:10pt;
+	color: white;
+}
+  
+nav a:hover{	color:red;
+}
+  
+nav ul{ list-style: none;
+		opacity:0.8;
+}
+  
+nav ul li{ 	line-height: 40px;
+			padding-left: 4px;
+}
+  
+nav ul li ul li a{
+	/*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+	color:yellow;
+}
+  
+nav ul ul li ul a{
+	/*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+	color:white;
+}
+  
+nav ul ul li{   /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+	position:relative; /* sätter positionen till vara relativt till sin behållare*/
+	display:none;
+}
+
+/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+nav ul ul ul{
+    display:none;
+}
+
+/*Visar dropdown vid hover på ul li Killroy 1-4*/
+nav ul li:hover ul li{
+    display: block; 
+}
+
+nav ul ul li:hover ul{
+	/*	Visar submenyn i dropdown när pekaren Hover över det dropdownelement som har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Killroy 1 */
+    display:block;
+    position: relative; /*  sätter positionen till att relative mot sin förälder 
+    						som är satt till att vara relative. Eg kan hela raden tas bort, får
+    						samma effekt! */
+    width:100px; /*samma som ul li*/
+    left:83px; /*absolute position i px ifrån sin förälder*/
+    top:0px; /*absolute position högst mot sin förälder*/ 
+}
+
+.title { 
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	/*display:flex;*/				
+}
+
+.my{	/*display: flex;*/
+		padding-right: 1em;				
+}
+
+.h1 {	font-size: 2rem;
+		margin: 0.67rem 0;
+		font-weight: bold;
+}
+
+.h2 {	font-size: 1.3rem;
+		margin: 0.37rem 0;
+		font-weight: bold;
+}
+.ptext2{ margin-bottom: 1rem;
+}
+
+#page_content { display: flex; /* vänder ordning när minskar view window */
+				flex-direction: column-reverse;	
+}
+#left_col{ flex-grow: 1; /*färgsätter Box 1 */
+		background-color: slategray;
+		color: white;
+}
+#right_col{ /*för framtida styling */
+}
+.content_top{ border-top: 3px solid blue;
+}
+
+
+.card1{
+	background: lightgreen;
+	width: 100%;
+}
+.card2{
+	background: greenyellow;
+	width: 100%;
+}
+.card3{
+	background: lightskyblue;
+}
+.images{ width: 100%;
+}
+.headline {
+	font-size: 120%;
+	font-weight: 700;
+}
+.main {	text-align: left;
+	color: white;
+}
+
+.footer {  
+	margin-top: auto;
+	height: 2rem;
+	  text-align: center;
+	background: lightseagreen;
+	margin: 8px;
+  }	
+  .fa{   padding: 6px;
+  }	
+
+  .subline{   display: flex;
+  			justify-content: space-between;
+  }
+
+  .flexcard{
+	  padding: 3px;
+	  margin-bottom: 10px;
+  }
+
+#endp{ margin: 3px;}  
+
+/*
+ *  **  FULL SCREEN VIEW BELOW
+*/
+@media all and (min-width: 816px)
+{
+	/*Tecknet för mobil menyn döljs på desktop*/
+	label{ display:none;
+	}
+
+	/*Nedan stylas Menyn på desktoppen*/
+
+.topmeny, .top{
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-end;
+}	
+    ul{ list-style-type:none; /*tar bort punkterna från alla ul*/
+    }
+    
+    a:link { text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+	
+	.meny {
+		display:flex;
+		justify-content: flex-end;
+		/*flex:10 5 736x; stylar GROWTH, SHRINK, BASIS värden för flex    */
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	
+	.list{ flex-direction: row;
+	}
+
+	.meny a{
+		display:block;
+		text-decoration: none;
+		font-family: merriweather;
+		font-weight: bold;
+		font-size:10pt;
+		color:white;
+	}
+
+	nav a:hover{ color:red;
+	}
+
+	nav ul{ /*stylar dropdown mm första ul i flödet, Meny 1,2,3,4,5*/
+		list-style: none;
+		opacity:0.8;
+	}
+
+	nav ul ul{ /*stylar dropdown o deras submenyers text till vänster */
+		text-align: left;
+	}
+
+	nav ul li{/* Påverkar *Meny1, Meny2--Meny5*/	
+		height:40px;
+		line-height: 40px;
+		margin-right:1px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+		position:relative; /* sätter positionen till vara relativt till sin behållare*/
+		display:none;
+		padding-left: 16px; /* Skjute texten till vänster, dropdown o dess submenyer */
+	}
+
+	/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+	nav ul ul ul{
+		display:none;
+	}
+
+	/*Visar dropdown vid hover på ul li Killroy 1-4*/
+	nav ul li:hover ul li{
+		display: block; 
+	}
+
+	/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
+	har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Meny1*/
+	nav ul ul li:hover ul{
+		display:block;
+		position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+		width:155px; /*samma som ul li*/
+		left:155px; /*absolute position 140px ifrån sin förälder*/
+		top:0px; /*absolute position högst mot sin förälder*/ 
+	}
+
+	nav ul li ul li a{ /*stylar länkad menytext i dropdown till rött*/
+		color: red;
+	}
+
+	nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centrerar texten */
+		padding-left:0px;
+		text-align: center;
+	}
+
+	.list ul li:last-child{ /*rundar nedre hörn på sista menyElementet i 
+					dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+	.list ul li li:first-child{ /* Stylar rundar övre höger hörn  */
+		border-radius: 0px 16px 0px 0px;		
+	}
+	.list ul li li:first-child a:hover{ /* stylar övre höger hörn när piekaren hovrar */
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child a:hover{ /*rundar nedre hörn på sista menyElementet i 
+		dropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+
+	.list ul li:last-child li a:hover{ 
+		/*	rundar nedre hörn på sista menyElementet i 
+			subdropdown, för menyTEXT */
+		border-radius: 0px 0px 0px 0px; /* */ 
+	}
+
+	.list ul li last-child li:first-child a:hover{ /*rundar övre högre hörn på subdropdown när hovrar*/
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child li:last-child a:hover{ /*	rundar nedre hörn på sista menyElementet i 
+			dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px;
+	}
+
+	nav ul ul span{
+		background-color: white;
+		color: magenta;
+		text-shadow: 3px 3px 6px blue;
+		padding: 2px 4px;
+		width: auto;
+		font-size: 12px;
+		border: none;
+		border-radius: 8px;
+	}
+
+	/* nedan specifikt för inl 4b*/
+	.dd1, .dd2, .dd3, .dd4, .dd5, .dd6{ /* övre rundade hörn i menylistan */
+		border-radius: 16px 16px 0px 0px;
+	}
+	.dd6{ order: 7;}
+
+	.syndicate{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		}
+
+		.flexcard { 
+			display: flex;  
+			font-weight: bold;
+			flex-direction: column;
+			margin-top: 3px;
+		}
+			
+		.card1, .card2{ width: 45%;
+		}
+		
+		#page_content{ flex-direction: row;
+		}
+
+		#left_col{ width: 35%;
+				margin-right: 0.5rem;
+		}
+
+
+}	/*end wing for @media*/

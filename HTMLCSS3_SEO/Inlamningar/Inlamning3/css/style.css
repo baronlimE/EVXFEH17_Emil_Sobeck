@@ -167,9 +167,6 @@ section article:nth-child(3n+2){ /*Var 3e article med start på nr2 får bakgrun
 background-color:slateblue;
 }  
 
-div #pushup{
-    
-}
 
 
   @media all and (min-width: 630px){
@@ -278,15 +275,20 @@ nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centre
     text-align: center;
 }
 
-nav ul ul li:nth-last-child(1){ /*rundar nedre hörn på sista menyElementet i 
+.curve ul li:last-child a:hover{ /*rundar nedre hörn på sista menyElementet i 
                 dropdown och subdropdown, för menyTEXT */
 border-radius: 0px 0px 16px 16px; 
 }
 
-nav ul ul li:nth-last-child(1) a{ /*rundar nedre hörn på sista menyElementet i 
-    dropdown och subdropdown, för LÄNKAD menyTEXT */
-border-radius: 0px 0px 16px 16px;
+.curve ul li:last-child{ /*rundar nedre hörn på sista menyElementet i 
+    dropdown och subdropdown, för menyTEXT */
+border-radius: 0px 0px 16px 16px; 
 }
+
+/*nav ul ul li:last-child a:hover{rundar nedre hörn på sista menyElementet i 
+    dropdown och subdropdown, för LÄNKAD menyTEXT 
+border-radius: 0px 0px 16px 16px;
+}*/
 
 nav ul ul span{
     background-color: white;

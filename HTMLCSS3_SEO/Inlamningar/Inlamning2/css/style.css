@@ -36,10 +36,10 @@
         color:white;
     }
 
-    nav li{ /*visar alla li under nav i följd efter varandra med padding på 1.5em */
+    nav li{ /*visar alla li under nav i följd efter varandra med margin på 2.2em */
         
         display: inline;
-        margin: 3em;
+        margin: 2.2em;
     }
 
     .logo h2+h3{  /*Adjacent sibling collector. Riktar in sig på en <h3> som är direkt efter en <h2> och de båda är syskon 
@@ -79,7 +79,7 @@
 }
 
 .blog_summary a:hover {/*pseudo class selector*/
-      color:red; /*ändrar länk färgen till röd när man hoovrar över den*/
+    color:red; /*ändrar länk färgen till röd när man hoovrar över den*/
 }
 
 .blog_summary{  /*centrerar allt i klassen blog_summary */
@@ -100,4 +100,13 @@
 }
 .web a{ /*gör alla länkar i .web till vita*/
     color: white;
+}
+
+.blog_summary li:nth-of-type(3n+2) a
+{
+    color: black;
+}
+
+section article:nth-child(3n+2){
+    background-color: black;
 }
