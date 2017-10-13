@@ -41,7 +41,7 @@ a:link {
 	text-decoration: none; /*tar bort underline i alla länkar*/
 }
 
-#nav-toggle {  /*Dold chekcbox som aldrig visas*/
+#nav-toggle {  /*Dold checkbox som aldrig visas*/
 	display: none;
 }
   

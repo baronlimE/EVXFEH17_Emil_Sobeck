@@ -1,0 +1,618 @@
+body {
+	margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	/* Det här blocket är definierat en gång tidigare se ovan*/
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+    display: inline-block;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    color: #ddca7e;
+    background: #282c34;
+	padding: .5em .8em;
+    border-radius: .2em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+figure {
+	margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+
+/* Header */
+
+.masthead {
+	padding: 0 1em;
+	text-align: center;
+	border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+
+/*--------------------------------------------------------------
+Title:
+--------------------------------------------------------------*/
+.masthead {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*--------------------------------------------------------------
+Menu:
+--------------------------------------------------------------*/
+.dd1{ background-color: seagreen; order: 2; }
+.dd2{ background-color: blue; order: 3; }
+.dd3{ background-color: purple; order: 4; }
+.dd4{ background-color: darkblue; order: 5; }
+.dd5{ background-color: orange; order: 6; }
+.dd6{background-color: orangered; order: 1; }
+
+.fa{ padding: 4px;}
+
+a:link {
+	text-decoration: none; /*tar bort underline i alla länkar*/
+}
+
+#nav-toggle {  /*Dold chekcbox som aldrig visas*/
+	display: none;
+}
+  
+/*Men som används för att dölja och visa menyn på mobilen*/
+#nav-toggle:checked + #wrapper nav {
+	display: block;
+}
+  
+
+/*Menyn döljs på mobilen som default*/
+nav {
+	display: flex;
+	justify-content: center;
+	display: none;	
+	text-transform: uppercase;
+}
+ 
+.list{ 	display:flex;
+		flex-direction: column;
+		text-align: center;
+}
+
+nav a{
+	display:block;
+	text-decoration: none;
+	font-family: merriweather;
+	font-weight: bold;
+	font-size:10pt;
+	color: white;
+}
+  
+nav a:hover{	color:red;
+}
+  
+nav ul{ list-style: none;
+		opacity:0.8;
+}
+  
+nav ul li{ 	line-height: 40px;
+			padding-left: 4px;
+}
+  
+nav ul li ul li a{
+	/*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+	color:yellow;
+}
+  
+nav ul ul li ul a{
+	/*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+	color:white;
+}
+  
+nav ul ul li{   /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+	position:relative; /* sätter positionen till vara relativt till sin behållare*/
+	display:none;
+}
+
+/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+nav ul ul ul{
+    display:none;
+}
+
+/*Visar dropdown vid hover på ul li Killroy 1-4*/
+nav ul li:hover ul li{
+    display: block; 
+}
+
+nav ul ul li:hover ul{
+	/*	Visar submenyn i dropdown när pekaren Hover över det dropdownelement som har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Killroy 1 */
+    display:block;
+    position: relative; /*  sätter positionen till att relative mot sin förälder 
+    						som är satt till att vara relative. Eg kan hela raden tas bort, får
+    						samma effekt! */
+    width:100px; /*samma som ul li*/
+    left:83px; /*absolute position i px ifrån sin förälder*/
+    top:0px; /*absolute position högst mot sin förälder*/ 
+}
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	max-width: 25em;
+	margin: 1em auto;
+	padding: 0;
+	list-style-type: none;
+
+}
+
+.cards a {
+	display: block;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.caption {
+	padding: 1em;
+	font-size: 90%;
+	color: black;
+}
+
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.caption p {
+	margin-top: .5em;
+	margin-bottom: 0;
+}
+
+.cards a:focus .caption,
+.cards a:hover .caption {
+	background: hsl(0, 0%, 97%);
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 27em) {
+
+		.masthead {
+			flex-direction: row;
+			flex-wrap:nowrap;
+		}
+
+		.site-title {
+			align-self:stretch;
+		}
+		.cards {
+			display: grid;
+			grid-template-columns: 2fr, 1fr;
+		}
+
+		.card-item {
+			grid-column: 1/2;
+		}
+
+		.card{
+			display: flex;
+			/*align-items: baseline; /* */
+			/*justify-content: flex-end; /* */
+		}
+
+		img {
+			width: 100%;
+			height:100%;
+		}
+
+		.card .caption {
+		}
+
+		/*--------------------------------------------------------------
+		Menu:
+		--------------------------------------------------------------*/
+	/*Tecknet för mobil menyn döljs på desktop*/
+	label{ display:none;
+	}
+
+	.topmenu,.top {
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-end;
+	}
+	/*Nedan stylas Menyn på desktoppen*/
+
+    ul{ list-style-type:none; /*tar bort punkterna från alla ul*/
+    }
+    
+    a:link { text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+	
+	.meny {
+		display:flex;
+		justify-content: flex-end;
+		/*flex:10 5 736x; stylar GROWTH, SHRINK, BASIS värden för flex    */
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	
+	.list{ 
+		flex-direction: row;
+	}
+
+	.meny a{
+		display:block;
+		text-decoration: none;
+		font-family: merriweather;
+		font-weight: bold;
+		font-size:10pt;
+	}
+
+	nav a:hover{ color:red;
+	}
+
+	nav ul{ /*stylar dropdown mm första ul i flödet, Meny 1,2,3,4,5*/
+		list-style: none;
+		opacity:0.8;
+	}
+
+	nav ul ul{ /*stylar dropdown o deras submenyers text till vänster */
+		text-align: left;
+	}
+
+	nav ul li{/* Påverkar *Meny1, Meny2--Meny5*/	
+		height:40px;
+		line-height: 40px;
+		margin-right:1px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+		position:relative; /* sätter positionen till vara relativt till sin behållare*/
+		display:none;
+		padding-left: 16px; /* Skjute texten till vänster, dropdown o dess submenyer */
+	}
+
+	/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+	nav ul ul ul{
+		display:none;
+	}
+
+	/*Visar dropdown vid hover på ul li Killroy 1-4*/
+	nav ul li:hover ul li{
+		display: block; 
+	}
+
+	/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
+	har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Meny1*/
+	nav ul ul li:hover ul{
+		display:block;
+		position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+		width:155px; /*samma som ul li*/
+		left:155px; /*absolute position 140px ifrån sin förälder*/
+		top:0px; /*absolute position högst mot sin förälder*/ 
+	}
+
+	nav ul li ul li a{ /*stylar länkad menytext i dropdown till rött*/
+		color: red;
+	}
+
+	nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centrerar texten */
+		padding-left:0px;
+		text-align: center;
+	}
+
+	.list ul li:last-child{ /*rundar nedre hörn på sista menyElementet i 
+					dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+	.list ul li li:first-child{ /* Stylar rundar övre höger hörn  */
+		border-radius: 0px 16px 0px 0px;		
+	}
+	.list ul li li:first-child a:hover{ /* stylar övre höger hörn när piekaren hovrar */
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child a:hover{ /*rundar nedre hörn på sista menyElementet i 
+		dropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+
+	.list ul li:last-child li a:hover{ 
+		/*	rundar nedre hörn på sista menyElementet i 
+			subdropdown, för menyTEXT */
+		border-radius: 0px 0px 0px 0px; /* */ 
+	}
+
+	.list ul li last-child li:first-child a:hover{ /*rundar övre högre hörn på subdropdown när hovrar*/
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child li:last-child a:hover{ /*	rundar nedre hörn på sista menyElementet i 
+			dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px;
+	}
+
+	nav ul ul span{
+		background-color: white;
+		color: magenta;
+		text-shadow: 3px 3px 6px blue;
+		padding: 2px 4px;
+		width: auto;
+		font-size: 12px;
+		border: none;
+		border-radius: 8px;
+	}
+
+	/* nedan specifikt för inl 4b*/
+	.dd1, .dd2, .dd3, .dd4, .dd5, .dd6{ /* övre rundade hörn i menylistan */
+		border-radius: 16px 16px 0px 0px;
+	}
+	.dd6{ order: 7;}
+
+
+		/*--------------------------------------------------------------
+		Article/Card :
+		--------------------------------------------------------------*/
+
+/*
+		.cards {
+			margin: 0 auto;
+			padding: 1em;
+		}
+
+		.card {
+			margin: 1em 0;
+			padding: .5em;
+		}
+
+		.cards a:focus,
+		.cards a:hover {
+			outline: 1px solid hsl(0, 0%, 80%);
+		}
+*/
+
+	}
+
+	@media screen and (min-width: 60em) {
+
+		.cards {
+			display: grid;
+			grid-template-rows: 20em;/* auto; /* */
+			grid-template-columns: repeat(5, 1fr);
+			grid-auto-flow: row;
+			/* Förstår inte varför jag måste göra detta för ta bort blank 1/3-del */
+			max-width: 75em;
+
+			margin: 0 auto;
+			padding: 1em;
+
+		}
+
+		.card-item {
+			grid-column: span 1; /*auto; /* */
+			grid-row: span 1; /*auto; /* */
+			/*grid-column: span 1; /* */
+
+			margin: 1em 0;
+			padding: .5em;
+			max-height: 20em;
+		}
+
+		.double, .double-row {
+			/* Makes the article to cover two rows*/
+			grid-row: span 2;
+			max-height: 40em;
+		}
+		
+		.double, .double-col {
+			/* Makes the article to cover two columns */
+			grid-column: span 2; /* */
+		}
+
+		.card {
+			display: flex;
+			align-items: top; /* */
+			/* width: 18em; /* */
+			/*justify-content: flex-end;/**/
+
+			flex-direction: column-reverse;
+			border-top: 2px grey solid;
+		}
+
+		.double .card {
+			/*display: flex; /* */
+			/*flex-direction: column; /* */
+		}
+
+		.double .card img {
+			height: 20em;
+		}
+
+		img {
+			height: 15em;
+		}
+
+		.cards a:focus,
+		.cards a:hover {
+			outline: 1px solid hsl(0, 0%, 80%);
+		}
+
+		.card:hover img {
+			/* Dimmar bilden nör man hovrar över */
+			opacity: 0.3;
+
+		}
+
+		.card .caption p {
+			visibility: hidden;
+			position: absolute;
+			z-index: 1;
+			width: 10em;
+		}
+
+		.card:hover .caption p{
+			/* Visar paragraf text när man hovrar över bild */
+			visibility: visible;			
+			opacity: 1;
+		}
+
+		.card .caption-title {
+			/*display:block; /* */
+		}
+
+	}
+
+}
