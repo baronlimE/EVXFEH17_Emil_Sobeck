@@ -533,6 +533,8 @@ CSS Grid layout for wider screens, when browser supports grid:
 			grid-template-rows: 20em;/* auto; /* */
 			grid-template-columns: repeat(5, 1fr);
 			grid-auto-flow: row;
+			grid-row-gap: 10px;
+			grid-column-gap: 10px;
 			/* Förstår inte varför jag måste göra detta för ta bort blank 1/3-del */
 			max-width: 75em;
 
@@ -546,9 +548,10 @@ CSS Grid layout for wider screens, when browser supports grid:
 			grid-row: span 1; /*auto; /* */
 			/*grid-column: span 1; /* */
 
-			margin: 1em 0;
+			margin: 0;
 			padding: .5em;
 			max-height: 20em;
+			border: 1px blue solid;
 		}
 
 		.double, .double-row {
