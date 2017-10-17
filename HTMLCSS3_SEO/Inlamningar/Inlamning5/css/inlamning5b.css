@@ -276,7 +276,7 @@ nav ul ul li:hover ul{
     position: relative; /*  sätter positionen till att relative mot sin förälder 
     						som är satt till att vara relative. Eg kan hela raden tas bort, får
     						samma effekt! */
-    width:100px; /*samma som ul li*/
+    width:100px; 
     left:83px; /*absolute position i px ifrån sin förälder*/
     top:0px; /*absolute position högst mot sin förälder*/ 
 }
@@ -338,195 +338,49 @@ CSS Grid layout for wider screens, when browser supports grid:
 		}
 		.cards {
 			display: grid;
-			grid-template-columns: 2fr, 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 10px;
+			grid-template-areas: 
+					"card1 card2"
+					"card3 card4"
+					"card5 card6"
+					"card7 ."	;	
 		}
 
-		.card-item {
-			grid-column: 1/2;
-		}
+	
 
-		.card{
-			display: flex;
-			/*align-items: baseline; /* */
-			/*justify-content: flex-end; /* */
-		}
+		.card1{grid-area: card1 }
+		.card2{grid-area: card2 }
+		.card3{grid-area: card3 }
+		.card4{grid-area: card4 }
+		.card5{grid-area: card5 }
+		.card6{grid-area: card6 }
+		.card7{grid-area: card7 }
+
+	
 
 		img {
 			width: 100%;
 			height:100%;
 		}
 
-		.card .caption {
+		.card .caption { 
 		}
 
-		/*--------------------------------------------------------------
-		Menu:
-		--------------------------------------------------------------*/
-	/*Tecknet för mobil menyn döljs på desktop*/
-	label{ display:none;
-	}
-
-	.topmenu,.top {
-		display: flex;
-		align-items: baseline;
-		justify-content: flex-end;
-	}
-	/*Nedan stylas Menyn på desktoppen*/
-
-    ul{ list-style-type:none; /*tar bort punkterna från alla ul*/
-    }
-    
-    a:link { text-decoration: none; /*tar bort underline i alla länkar*/
-    }
-	
-	.meny {
-		display:flex;
-		justify-content: flex-end;
-		/*flex:10 5 736x; stylar GROWTH, SHRINK, BASIS värden för flex    */
-		text-transform: uppercase;
-		text-align: center;	
-	}
-	
-	.list{ 
-		flex-direction: row;
-	}
-
-	.meny a{
-		display:block;
-		text-decoration: none;
-		font-family: merriweather;
-		font-weight: bold;
-		font-size:10pt;
-	}
-
-	nav a:hover{ color:red;
-	}
-
-	nav ul{ /*stylar dropdown mm första ul i flödet, Meny 1,2,3,4,5*/
-		list-style: none;
-		opacity:0.8;
-	}
-
-	nav ul ul{ /*stylar dropdown o deras submenyers text till vänster */
-		text-align: left;
-	}
-
-	nav ul li{/* Påverkar *Meny1, Meny2--Meny5*/	
-		height:40px;
-		line-height: 40px;
-		margin-right:1px;
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
-	nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
-		position:relative; /* sätter positionen till vara relativt till sin behållare*/
-		display:none;
-		padding-left: 16px; /* Skjute texten till vänster, dropdown o dess submenyer */
-	}
-
-	/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
-	nav ul ul ul{
-		display:none;
-	}
-
-	/*Visar dropdown vid hover på ul li Killroy 1-4*/
-	nav ul li:hover ul li{
-		display: block; 
-	}
-
-	/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
-	har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Meny1*/
-	nav ul ul li:hover ul{
-		display:block;
-		position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
-		width:155px; /*samma som ul li*/
-		left:155px; /*absolute position 140px ifrån sin förälder*/
-		top:0px; /*absolute position högst mot sin förälder*/ 
-	}
-
-	nav ul li ul li a{ /*stylar länkad menytext i dropdown till rött*/
-		color: red;
-	}
-
-	nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centrerar texten */
-		padding-left:0px;
-		text-align: center;
-	}
-
-	.list ul li:last-child{ /*rundar nedre hörn på sista menyElementet i 
-					dropdown och subdropdown, för menyTEXT */
-		border-radius: 0px 0px 16px 16px; 
-	}
-	.list ul li li:first-child{ /* Stylar rundar övre höger hörn  */
-		border-radius: 0px 16px 0px 0px;		
-	}
-	.list ul li li:first-child a:hover{ /* stylar övre höger hörn när piekaren hovrar */
-		border-radius: 0px 16px 0px 0px;
-	}
-
-	.list ul li:last-child a:hover{ /*rundar nedre hörn på sista menyElementet i 
-		dropdown, för menyTEXT */
-		border-radius: 0px 0px 16px 16px; 
-	}
-
-	.list ul li:last-child li a:hover{ 
-		/*	rundar nedre hörn på sista menyElementet i 
-			subdropdown, för menyTEXT */
-		border-radius: 0px 0px 0px 0px; /* */ 
-	}
-
-	.list ul li last-child li:first-child a:hover{ /*rundar övre högre hörn på subdropdown när hovrar*/
-		border-radius: 0px 16px 0px 0px;
-	}
-
-	.list ul li:last-child li:last-child a:hover{ /*	rundar nedre hörn på sista menyElementet i 
-			dropdown och subdropdown, för menyTEXT */
-		border-radius: 0px 0px 16px 16px;
-	}
-
-	nav ul ul span{
-		background-color: white;
-		color: magenta;
-		text-shadow: 3px 3px 6px blue;
-		padding: 2px 4px;
-		width: auto;
-		font-size: 12px;
-		border: none;
-		border-radius: 8px;
-	}
-
-	/* nedan specifikt för inl 4b*/
-	.dd1, .dd2, .dd3, .dd4, .dd5, .dd6{ /* övre rundade hörn i menylistan */
-		border-radius: 16px 16px 0px 0px;
-	}
-	.dd6{ order: 7;}
-
-
-		/*--------------------------------------------------------------
-		Article/Card :
-		--------------------------------------------------------------*/
-
-/*
-		.cards {
-			margin: 0 auto;
-			padding: 1em;
+		.masthead{
+			display: flex;
+			flex-direction: column;
 		}
-
-		.card {
-			margin: 1em 0;
-			padding: .5em;
-		}
-
-		.cards a:focus,
-		.cards a:hover {
-			outline: 1px solid hsl(0, 0%, 80%);
-		}
-*/
 
 	}
 
 	@media screen and (min-width: 60em) {
+
+
+		.masthead{
+			flex-direction: row;
+			/*align-items: baseline;*/
+		}
 
 		.cards {
 			display: grid;
@@ -615,6 +469,154 @@ CSS Grid layout for wider screens, when browser supports grid:
 		.card .caption-title {
 			/*display:block; /* */
 		}
+
+		/*--------------------------------------------------------------
+		Menu:
+		--------------------------------------------------------------*/
+	/*Tecknet för mobil menyn döljs på desktop*/
+	label{ display:none;
+	}
+
+	.topmenu,.top {
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-end;
+	}
+	/*Nedan stylas Menyn på desktoppen*/
+
+    ul{ list-style-type:none; /*tar bort punkterna från alla ul*/
+    }
+    
+    a:link { text-decoration: none; /*tar bort underline i alla länkar*/
+    }
+	
+	.meny {
+		display:flex;
+		justify-content: flex-end;
+		/*flex:10 5 736x; stylar GROWTH, SHRINK, BASIS värden för flex    */
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	
+	.list{ 
+		flex-direction: row;
+	}
+
+	.meny a{
+		display:block;
+		text-decoration: none;
+		font-family: merriweather;
+		font-weight: bold;
+		font-size:10pt;
+	}
+
+	nav a:hover{ color:red;
+	}
+
+	nav ul{ /*stylar dropdown mm första ul i flödet, Meny 1,2,3,4,5*/
+		list-style: none;
+		opacity:0.8;
+	}
+
+	nav ul ul{ /*stylar dropdown o deras submenyers text till vänster */
+		text-align: left;
+	}
+
+	nav ul li{/* Påverkar *Meny1, Meny2--Meny5*/	
+		height:40px;
+		line-height: 40px;
+		margin-right:1px;
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100px;
+	}
+
+	nav ul ul li{  /*Döljer dropdown. T ex Killroy 1-5 nivå*/
+		position:relative; /* sätter positionen till vara relativt till sin behållare*/
+		display:none;
+		/*padding-left: 16px; /* Skjuter texten till vänster, dropdown o dess submenyer */
+	}
+
+	/*Döljer submenyn i dropdown. Påverkar submenyn med elementen Killroy 1.1-1.4 osv*/
+	nav ul ul ul{
+		display:none;
+	}
+
+	/*Visar dropdown vid hover på ul li Killroy 1-4*/
+	nav ul li:hover ul li{
+		display: block; 
+	}
+
+	/*Visar submenyn i dropdown när pekaren Hover över det dropdownelement som
+	har submeny. Vårt exempel Visar Killroy 1.1-1.4 när Hover på Meny1*/
+	nav ul ul li:hover ul{
+		display:block;
+		position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+		width:155px; 
+		left:98px; /*absolute position 140px ifrån sin förälder*/
+		top:0px; /*absolute position högst mot sin förälder*/ 
+		background: #CDEB8F;
+	}
+
+	nav ul li ul li a{ /*stylar länkad menytext i dropdown till rött*/
+		color: red;
+	}
+
+	nav ul ul li:hover{ /*hover på dropdown o dess submeny justera padding o centrerar texten */
+		padding-left:0px;
+		text-align: center;
+	}
+
+	.list ul li:last-child{ /*rundar nedre hörn på sista menyElementet i 
+					dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+	.list ul li li:first-child{ /* Stylar rundar övre höger hörn  */
+		border-radius: 0px 16px 0px 0px;		
+	}
+	.list ul li li:first-child a:hover{ /* stylar övre höger hörn när piekaren hovrar */
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child a:hover{ /*rundar nedre hörn på sista menyElementet i 
+		dropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px; 
+	}
+
+	.list ul li:last-child li a:hover{ 
+		/*	rundar nedre hörn på sista menyElementet i 
+			subdropdown, för menyTEXT */
+		border-radius: 0px 0px 0px 0px; /* */ 
+	}
+
+	.list ul li last-child li:first-child a:hover{ /*rundar övre högre hörn på subdropdown när hovrar*/
+		border-radius: 0px 16px 0px 0px;
+	}
+
+	.list ul li:last-child li:last-child a:hover{ /*	rundar nedre hörn på sista menyElementet i 
+			dropdown och subdropdown, för menyTEXT */
+		border-radius: 0px 0px 16px 16px;
+	}
+
+	nav ul ul span{
+		background-color: white;
+		color: magenta;
+		text-shadow: 3px 3px 6px blue;
+		padding: 2px 4px;
+		width: auto;
+		font-size: 12px;
+		border: none;
+		border-radius: 8px;
+	}
+
+	/* nedan specifikt för inl 4b*/
+	.dd1, .dd2, .dd3, .dd4, .dd5, .dd6{ /* övre rundade hörn i menylistan */
+		border-radius: 16px 16px 0px 0px;
+	}
+	.dd6{ order: 7;}
+
+
+
 
 	}
 
